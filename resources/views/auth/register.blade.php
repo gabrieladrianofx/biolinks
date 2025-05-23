@@ -1,8 +1,9 @@
 <div>
+    {{ auth()->id() }}
     <h1>Register</h1>
 
     @if ($message = session()->get('message'))
-        <div>{{$message}}</div>
+        <div>{{ $message }}</div>
     @endif
 
     <form action="{{ route('register') }}" method="post">
