@@ -5,6 +5,7 @@
         <div>{{ $message }}</div>
     @endif
 
+    <a href="{{ route('profile') }}">Atualizar Profile</a>
     <a href="{{ route('links.create') }}">Criar Link</a>
 
     <ul>
