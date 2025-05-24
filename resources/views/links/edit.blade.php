@@ -6,6 +6,7 @@
         <div>{{ $message }}</div>
     @endif
 
+
     <form action="{{ route('links.edit', $link) }}" method="post">
         @csrf
         @method('PUT')
@@ -29,6 +30,7 @@
         </div>
         <br>
 
+        <a href="{{ route('dashboard') }}">Cancelar</a>
         <button>Salvar</button>
     </form>
 </div>
