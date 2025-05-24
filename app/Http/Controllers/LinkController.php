@@ -30,19 +30,11 @@ class LinkController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(Link $link)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit(Link $link)
     {
-        //
+        return view('links.edit', compact('link'));
     }
 
     /**
@@ -50,7 +42,9 @@ class LinkController extends Controller
      */
     public function update(UpdateLinkRequest $request, Link $link)
     {
-        //
+        $link->fill($request->validated())->saveOrFail();
+
+        return to_route('dashboard')->with(['message' => 'Atualizado com Sucesso!']);
     }
 
     /**
