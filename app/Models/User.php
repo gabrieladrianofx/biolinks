@@ -36,7 +36,7 @@ class User extends Authenticatable
         ];
     }
 
-    public function links(): HasMany
+    public function links()
     {
         return $this->hasMany(Link::class);
     }
