@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ config('app.locale') }}">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>{{ config('app.name') }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
 
-<body class="h-full bg-slate-900 text-slate-50">
-    <h1 class="">hello</h1>
+<body class="text-base-50 h-full bg-slate-900">
+    {{ $slot }}
 </body>
 
 </html>
