@@ -10,7 +10,7 @@
 
 </head>
 
-<body class="h-full bg-slate-900 text-slate-50">
+<body class="h-screen bg-slate-900">
     {{ $slot }}
 </body>
 
