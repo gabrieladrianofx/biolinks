@@ -13,7 +13,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware('guest')->group(function() {
+Route::middleware('guest')->group(function () {
     Route::get('/login', [LoginController::class, 'index'])->name('login');
     Route::post('/login', [LoginController::class, 'login']);
     Route::get('/register', [RegisterController::class, 'index'])->name('register');
@@ -21,14 +21,15 @@ Route::middleware('guest')->group(function() {
 });
 
 
-Route::middleware('auth')->group(function() {
+Route::middleware('auth')->group(function () {
     Route::get('/logout', LogoutController::class)->name('logout');
 
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
 
-    Route::middleware('can:atualizar,link')->group(function() {
-        Route::get('/links/create', [LinkController::class, 'create'])->name('links.create');
-        Route::post('/links/create', [LinkController::class, 'store']);
+    Route::get('/links/create', [LinkController::class, 'create'])->name('links.create');
+    Route::post('/links/create', [LinkController::class, 'store']);
+
+    Route::middleware('can:atualizar,link')->group(function () {
         Route::get('/links/{link}/edit', [LinkController::class, 'edit'])->name('links.edit');
         Route::put('/links/{link}/edit', [LinkController::class, 'update']);
         Route::delete('/links/{link}', [LinkController::class, 'destroy'])->name('links.destroy');
