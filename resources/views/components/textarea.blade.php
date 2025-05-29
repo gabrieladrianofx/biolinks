@@ -1,2 +1,2 @@
 @props(['value'])
-<textarea name="description" {{ $attributes }} class="textarea textarea-bordered w-full bg-slate-700">{{ $value }}</textarea>
+<textarea name="description" {{ $attributes }} class="textarea textarea-bordered bg-base-100 w-full">{{ $value }}</textarea>
